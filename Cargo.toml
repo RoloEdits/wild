@@ -112,9 +112,6 @@ winnow = { version = "1.0.0", features = ["simd"] }
 zerocopy = { version = "0.8.27", features = ["derive"] }
 zstd = "0.13.0"
 
-[profile.release]
-codegen-units = 1
-
 [profile.release-debug]
 inherits = "release"
 debug = true
@@ -127,6 +124,12 @@ codegen-units = 16
 [profile.opt-debug]
 inherits = "opt"
 debug = true
+
+[profile.release]
+codegen-units = 1
+lto = "fat"
+debug = false
+strip = true
 
 # The profile that we use for release builds distributed via github.
 [profile.dist]

@@ -2,9 +2,9 @@
 #[global_allocator]
 static MIMALLOC: mimalloc::MiMalloc = mimalloc::MiMalloc;
 
-#[cfg(feature = "dhat")]
-#[global_allocator]
-static ALLOC: dhat::Alloc = dhat::Alloc;
+// #[cfg(feature = "dhat")]
+// #[global_allocator]
+// static ALLOC: dhat::Alloc = dhat::Alloc;
 
 fn main() {
     if let Err(error) = run() {
